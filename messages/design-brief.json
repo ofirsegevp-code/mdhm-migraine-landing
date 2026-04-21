@@ -1,0 +1,32 @@
+{
+  "designBrief": {
+    "playbook": "feminine-white-dr",
+    "colors": {
+      "bg": "#FFFFFF",
+      "bgAlt": "#F9F4EE",
+      "text": "#1C1C1C",
+      "textSecondary": "#5C5150",
+      "accent": "#C4A97D",
+      "accentLight": "#F5EAD8",
+      "cta": "#8B2635",
+      "ctaHover": "#6B1D29"
+    },
+    "vibe": "warm-trust",
+    "animationLevel": "subtle",
+    "sectionTransitions": "white-space",
+    "specialElements": [
+      "marker-highlights",
+      "testimonial-cards-soft-shadow",
+      "strikethrough-price",
+      "bonus-cards",
+      "stats-bar",
+      "guarantee-badge"
+    ],
+    "typography": {
+      "headings": "Frank Ruhl Libre, serif",
+      "body": "Assistant, Heebo, sans-serif"
+    },
+    "rtl": true,
+    "notes": "Feminine White DR style adapted for MDHM brand. Warm earthy tones — NOT clinical, NOT new-age. Burgundy CTA from brand. Beige/sand markers for highlights. Zero aggressive animations — reads like a personal letter. Mobile-first. Hebrew RTL throughout."
+  }
+}
