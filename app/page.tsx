@@ -119,7 +119,7 @@ export default function Page() {
             לנשים שהמיגרנה כבר מנהלת להן את היומן:
           </motion.p>
 
-          <motion.h1 variants={fadeUp} className="text-3xl md:text-4xl font-bold text-[#1C1C1C] leading-snug mb-6">
+          <motion.h1 variants={fadeUp} className="text-4xl md:text-5xl font-bold text-[#1C1C1C] leading-snug mb-6">
             לקח לי 20 שנה ומסע לסין להבין מה באמת עומד מאחורי המיגרנה.
             <br /><br />
             עכשיו אני חושף את השיטה — כדי שנשים שניסו הכל יוכלו סוף סוף{' '}
@@ -170,13 +170,13 @@ export default function Page() {
             זה הרגע שמשהו צריך להשתנות.
           </motion.h2>
 
-          <motion.p variants={fadeUp} className="text-base text-[#5C5150] mb-4">
+          <motion.p variants={fadeUp} className="text-lg text-[#5C5150] mb-4">
             יש נשים שמתחילות כל בוקר בבדיקה אחת — האם הכאב שם.
             <br />שמחזיקות כדור בתיק לכל מקרה.
             <br />שתוכניות שלהן תמיד מגיעות עם סימן שאלה.
           </motion.p>
 
-          <motion.p variants={fadeUp} className="font-semibold text-[#1C1C1C] mb-2">זה לא רק הכאב עצמו.</motion.p>
+          <motion.p variants={fadeUp} className="text-lg font-semibold text-[#1C1C1C] mb-2">זה לא רק הכאב עצמו.</motion.p>
 
           <motion.ul variants={stagger} className="mb-6 space-y-2">
             {[
@@ -418,7 +418,7 @@ export default function Page() {
                   <div className="flex-1">
                     <p className="text-xs font-semibold text-[#C4A97D] mb-0.5">מודול {i + 1}</p>
                     <p className="font-bold text-[#1C1C1C] mb-1">{title}</p>
-                    <p className="text-sm text-[#5C5150] leading-relaxed">{desc}</p>
+                    <p className="text-base text-[#5C5150] leading-relaxed">{desc}</p>
                   </div>
                 </div>
               </motion.div>
@@ -560,7 +560,7 @@ export default function Page() {
           {/* Guarantee */}
           <motion.div variants={fadeUp} className="bg-white rounded-2xl p-5 border border-[#C4A97D] mb-8">
             <p className="font-bold text-[#1C1C1C] mb-2">🛡️ אחריות 30 יום — ללא אותיות קטנות</p>
-            <p className="text-sm text-[#5C5150] leading-relaxed">
+            <p className="text-base text-[#5C5150] leading-relaxed">
               תרגלת, עברת על התכנים, ולא הרגשת שינוי?
               מחזירים לך את הכסף. הכל. ללא שאלות.
             </p>
@@ -569,14 +569,14 @@ export default function Page() {
       </Section>
 
       {/* ─── FINAL CTA ─── */}
-      <Section id="cta-form">
+      <Section id="cta-form" className="!bg-[#3D0A12]">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={stagger}
         >
-          <motion.h2 variants={fadeUp} className="text-2xl font-bold mb-6 text-center">
+          <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold mb-6 text-center text-white">
             הגיע הזמן להחזיר שליטה:
           </motion.h2>
 
@@ -615,9 +615,9 @@ export default function Page() {
             </div>
           </motion.div>
 
-          <motion.p variants={fadeUp} className="mt-8 text-sm text-[#5C5150] font-semibold text-center">
+          <motion.p variants={fadeUp} className="mt-8 text-sm text-white/70 font-semibold text-center">
             באהבה,<br />
-            <span className="text-[#1C1C1C] text-base">אופיר שגב פרימן</span>
+            <span className="text-white text-base">אופיר שגב פרימן</span>
           </motion.p>
         </motion.div>
       </Section>
