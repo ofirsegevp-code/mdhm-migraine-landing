@@ -3,11 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <base target="_top">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Assistant', Arial, sans-serif; direction: rtl; }
   </style>
+  <script>
+    (function() {
+      function notifyParent(url) {
+        try { window.parent.postMessage({ type: 'navigate', url: url }, '*'); } catch(e) {}
+      }
+      try {
+        var orig = Object.getOwnPropertyDescriptor(Location.prototype, 'href');
+        Object.defineProperty(Location.prototype, 'href', {
+          set: function(url) { notifyParent(url); },
+          get: orig.get
+        });
+      } catch(e) {}
+      var origAssign = window.location.assign.bind(window.location);
+      window.location.assign = function(url) { notifyParent(url); };
+      var origReplace = window.location.replace.bind(window.location);
+      window.location.replace = function(url) { notifyParent(url); };
+    })();
+  </script>
 </head>
 <body>
 <script type='text/javascript' src='//form2.ravpage.co.il/860a8a40a584e506e5f27c6bd212e9f969E77DBB' charset='UTF-8'></script>

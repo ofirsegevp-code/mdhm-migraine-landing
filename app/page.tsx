@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -16,6 +16,16 @@ const stagger = {
 
 function RavpageForm() {
   const iframeRef = useRef<HTMLIFrameElement>(null)
+
+  useEffect(() => {
+    function handleMessage(e: MessageEvent) {
+      if (e.data && e.data.type === 'navigate' && e.data.url) {
+        window.location.href = e.data.url
+      }
+    }
+    window.addEventListener('message', handleMessage)
+    return () => window.removeEventListener('message', handleMessage)
+  }, [])
 
   function handleLoad() {
     const iframe = iframeRef.current
