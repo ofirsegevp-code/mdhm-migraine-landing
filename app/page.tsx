@@ -379,48 +379,46 @@ export default function Page() {
             מה תקבלי בערכה
           </motion.h2>
 
-          <motion.div variants={stagger} className="space-y-3 mb-12">
+          {/* Course curriculum style */}
+          <motion.div variants={fadeUp} className="rounded-2xl border border-[#E8DDD5] overflow-hidden mb-12">
+            {/* Header bar */}
+            <div className="bg-[#8B2635] px-5 py-3 flex items-center gap-2">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" className="w-5 h-5 shrink-0">
+                <path d="M4 6h16M4 10h16M4 14h10" />
+              </svg>
+              <span className="text-white font-bold text-sm">6 שיעורים — גישה מיידית לכל התכנים</span>
+            </div>
+
+            {/* Lessons list */}
             {[
-              {
-                title: 'מה הגוף שלך באמת אומר?',
-                desc: 'הבנה עמוקה של שורש הכאב לפני שמתחילים לטפל. כולל שאלון אבחנה עצמי שמראה לך בדיוק איפה הגוף שלך "תקוע".',
-              },
-              {
-                title: '6 דקות של ריסטרט',
-                desc: 'טכניקות מבוססות מחקר להרגעת מערכת העצבים — נשימות, סריקה גופנית, שחרור שרירי לסת וצוואר.',
-              },
-              {
-                title: 'כשהאנרגיה תקועה — הכאב גובר',
-                desc: 'אקופרסורה, טאפינג וניקוז אנרגטי — לשחרר את מה שהגוף מחזיק מבלי שהרגשת.',
-              },
-              {
-                title: 'הפרק שאף אחד לא מדבר עליו',
-                desc: 'הקשר הישיר בין רגשות לא מעובדים לכאב. EFT, כתיבה רגשית ומדיטציה מודרכת לשחרור עמוק.',
-              },
-              {
-                title: 'לשנות את הסיפור שהמוח מספר',
-                desc: 'כלים לזהות ולשחרר אמונות שמזינות את הכאב — נוירולוגית.',
-              },
-              {
-                title: 'שקט שנשאר',
-                desc: 'עבודה עמוקה בתת-המודע — כדי שהשינוי יהפוך להרגל ביולוגי חדש, לא הקלה זמנית.',
-              },
-            ].map(({ title, desc }, i) => (
+              { title: 'מה הגוף שלך באמת אומר?', desc: 'הבנה עמוקה של שורש הכאב לפני שמתחילים לטפל. כולל שאלון אבחנה עצמי שמראה לך בדיוק איפה הגוף שלך "תקוע".', dur: '18 דק׳' },
+              { title: '6 דקות של ריסטרט', desc: 'טכניקות מבוססות מחקר להרגעת מערכת העצבים — נשימות, סריקה גופנית, שחרור שרירי לסת וצוואר.', dur: '22 דק׳' },
+              { title: 'כשהאנרגיה תקועה — הכאב גובר', desc: 'אקופרסורה, טאפינג וניקוז אנרגטי — לשחרר את מה שהגוף מחזיק מבלי שהרגשת.', dur: '25 דק׳' },
+              { title: 'הפרק שאף אחד לא מדבר עליו', desc: 'הקשר הישיר בין רגשות לא מעובדים לכאב. EFT, כתיבה רגשית ומדיטציה מודרכת לשחרור עמוק.', dur: '30 דק׳' },
+              { title: 'לשנות את הסיפור שהמוח מספר', desc: 'כלים לזהות ולשחרר אמונות שמזינות את הכאב — נוירולוגית.', dur: '20 דק׳' },
+              { title: 'שקט שנשאר', desc: 'עבודה עמוקה בתת-המודע — כדי שהשינוי יהפוך להרגל ביולוגי חדש, לא הקלה זמנית.', dur: '28 דק׳' },
+            ].map(({ title, desc, dur }, i) => (
               <motion.div
                 key={title}
                 variants={fadeUp}
-                className="bg-[#F9F4EE] rounded-xl p-4 border border-[#F5EAD8]"
+                className={`flex items-start gap-4 px-5 py-4 ${i % 2 === 0 ? 'bg-white' : 'bg-[#FAF7F4]'} border-b border-[#F0E8E0] last:border-b-0`}
               >
-                <div className="flex items-start gap-4">
-                  <div className="shrink-0 mt-0.5 text-[#8B2635] bg-white rounded-lg p-2 border border-[#F5EAD8] shadow-sm">
-                    {moduleIcons[title]}
+                {/* Number + play icon */}
+                <div className="shrink-0 flex flex-col items-center gap-1 pt-0.5">
+                  <div className="w-8 h-8 rounded-full bg-[#F9F4EE] border border-[#E8DDD5] flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" fill="#8B2635" className="w-3.5 h-3.5">
+                      <path d="M8 5l11 7-11 7V5z" />
+                    </svg>
                   </div>
-                  <div className="flex-1">
-                    <p className="text-xs font-semibold text-[#C4A97D] mb-0.5">מודול {i + 1}</p>
-                    <p className="font-bold text-[#1C1C1C] mb-1">{title}</p>
-                    <p className="text-base text-[#5C5150] leading-relaxed">{desc}</p>
-                  </div>
+                  <span className="text-[10px] text-[#C4A97D] font-semibold">שיעור {i + 1}</span>
                 </div>
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+                  <p className="font-bold text-[#1C1C1C] mb-1 text-right">{title}</p>
+                  <p className="text-base text-[#5C5150] leading-relaxed text-right">{desc}</p>
+                </div>
+                {/* Duration */}
+                <div className="shrink-0 text-xs text-[#C4A97D] font-semibold pt-1 whitespace-nowrap">{dur}</div>
               </motion.div>
             ))}
           </motion.div>
