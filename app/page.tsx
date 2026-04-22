@@ -346,7 +346,7 @@ export default function Page() {
       </Section>
 
       {/* ─── CTA #2 ─── */}
-      <Section alt>
+      <Section alt className="!py-8">
         <CTAButton />
       </Section>
 
