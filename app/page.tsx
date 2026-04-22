@@ -427,7 +427,7 @@ export default function Page() {
 
           {/* Bonuses */}
           <motion.h3 variants={fadeUp} className="text-xl font-bold mb-4 text-center">
-            ו-3 בונוסים שמעטפים את התהליך:
+            ו-3 בונוסים שעוטפים את התהליך:
           </motion.h3>
 
           <motion.div variants={stagger} className="space-y-3 mb-8">
