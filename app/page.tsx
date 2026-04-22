@@ -548,11 +548,9 @@ export default function Page() {
           </motion.h2>
 
           <motion.div variants={fadeUp} className="bg-white rounded-2xl p-7 shadow-sm border border-[#F5EAD8] text-center mb-6">
-            <p className="text-sm text-[#5C5150] mb-1">השווי המלא של הערכה + הבונוסים:</p>
-            <p className="text-2xl text-[#5C5150] line-through mb-3">970 ₪</p>
             <p className="text-5xl font-bold text-[#8B2635] mb-1">129 ₪</p>
             <p className="text-sm text-[#5C5150] mb-4">או 3 תשלומים של 43 ₪ בלבד</p>
-            <p className="text-xs text-[#5C5150] italic">פחות מעלות טיפול אחד בקליניקה</p>
+            <p className="text-base font-bold text-[#1C1C1C]">פחות מעלות טיפול אחד בקליניקה</p>
           </motion.div>
 
           {/* Guarantee */}
