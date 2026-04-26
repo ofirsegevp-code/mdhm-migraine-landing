@@ -3,26 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <base target="_top">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Assistant', Arial, sans-serif; direction: rtl; }
   </style>
   <script>
-    (function() {
-      function notifyParent(url) {
-        try { window.parent.postMessage({ type: 'navigate', url: url }, '*'); } catch(e) {}
+    (function () {
+      function topNav(url) {
+        try { window.top.location.href = url; } catch (e) {
+          try { window.parent.postMessage({ type: 'navigate', url: url }, '*'); } catch (e2) {}
+        }
       }
+
+      // 1) Override Location.prototype.href setter
       try {
         var orig = Object.getOwnPropertyDescriptor(Location.prototype, 'href');
         Object.defineProperty(Location.prototype, 'href', {
-          set: function(url) { notifyParent(url); },
-          get: orig.get
+          set: function (url) { topNav(url); },
+          get: orig.get,
+          configurable: true
         });
-      } catch(e) {}
-      var origAssign = window.location.assign.bind(window.location);
-      window.location.assign = function(url) { notifyParent(url); };
-      var origReplace = window.location.replace.bind(window.location);
-      window.location.replace = function(url) { notifyParent(url); };
+      } catch (e) {}
+
+      // 2) Override window.location.assign / replace
+      try { window.location.assign = function (url) { topNav(url); }; } catch (e) {}
+      try { window.location.replace = function (url) { topNav(url); }; } catch (e) {}
+
+      // 3) Force every form to submit to _top
+      function forceTopOnForms() {
+        document.querySelectorAll('form').forEach(function (f) {
+          f.setAttribute('target', '_top');
+        });
+        document.querySelectorAll('a[href]').forEach(function (a) {
+          if (!a.target) a.setAttribute('target', '_top');
+        });
+      }
+
+      // Run periodically + observe DOM mutations (Ravpage injects forms async)
+      var ready = function () {
+        forceTopOnForms();
+        var obs = new MutationObserver(forceTopOnForms);
+        obs.observe(document.documentElement, { childList: true, subtree: true });
+        setInterval(forceTopOnForms, 1000);
+      };
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', ready);
+      } else {
+        ready();
+      }
     })();
   </script>
 </head>
