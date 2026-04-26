@@ -52,7 +52,7 @@ function Section({ children, alt = false, className = '', id = '' }: {
   id?: string
 }) {
   return (
-    <section id={id} className={`py-16 px-5 md:px-8 ${alt ? 'bg-[#F9F4EE]' : 'bg-white'} ${className}`}>
+    <section id={id} className={`py-20 md:py-24 px-5 md:px-8 bg-white ${className}`}>
       <div className="max-w-2xl mx-auto text-center">{children}</div>
     </section>
   )
@@ -144,7 +144,7 @@ export default function Page() {
           <motion.div variants={fadeUp} className="flex justify-center">
             <a
               href="#pain"
-              className="inline-flex items-center gap-2 text-[#8B2635] font-semibold text-base border border-[#8B2635] rounded-full px-6 py-3 hover:bg-[#F9F4EE] transition-colors"
+              className="inline-flex items-center gap-2 text-[#8B2635] font-semibold text-base border border-[#8B2635] rounded-full px-6 py-3 hover:bg-[#FAFAFA] transition-colors"
             >
               ספרו לי עוד
               <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" className="w-4 h-4">
@@ -201,7 +201,7 @@ export default function Page() {
             ))}
           </motion.ul>
 
-          <motion.div variants={fadeUp} className="bg-white rounded-xl p-5 border border-[#F5EAD8] mb-8">
+          <motion.div variants={fadeUp} className="bg-white rounded-xl p-5 shadow-sm mb-8">
             <p className="text-sm text-[#5C5150]">
               👈 כמיליון ישראלים סובלים ממיגרנה כרונית. מתוכם —{' '}
               <strong className="text-[#1C1C1C]">750,000 נשים</strong>. רובן לא יודעות מה המקור האמיתי של הכאב.
@@ -214,7 +214,7 @@ export default function Page() {
           </motion.h3>
 
           {/* Visual infographic */}
-          <motion.div variants={fadeUp} className="mb-6 rounded-xl overflow-hidden bg-white p-3 border border-[#F5EAD8]">
+          <motion.div variants={fadeUp} className="mb-6 rounded-xl overflow-hidden bg-white p-3 shadow-sm">
             <Image
               src="/why-failed.png"
               alt="כל גישה מטפלת בממד אחד בלבד — כדורים, עיסוי, דיקור, טיפול רגשי"
@@ -230,7 +230,7 @@ export default function Page() {
               { t: 'נוירולוג / בוטוקס', p: 'בודק את הראש. לא את הרגש, המחשבות, הדפוסים העמוקים.' },
               { t: 'דיקור / כירופרקט', p: 'עוזר לגוף בלבד. שאר הסיבות ממשיכות לפעול מאחורי הקלעים.' },
             ].map(({ t, p }) => (
-              <motion.div key={t} variants={fadeUp} className="bg-white rounded-lg p-4 border border-[#F5EAD8]">
+              <motion.div key={t} variants={fadeUp} className="bg-white rounded-lg p-4 shadow-sm">
                 <p className="font-bold text-[#1C1C1C] mb-1">{t}</p>
                 <p className="text-sm text-[#5C5150]">{p}</p>
               </motion.div>
@@ -262,7 +262,7 @@ export default function Page() {
           <motion.div variants={fadeUp} className="space-y-4 text-[#5C5150] leading-relaxed mb-6">
             <p>הייתי איש הייטק עם מיגרנות משתקות — 20 שנה. כדורים, נוירולוגים, כל מה שהרפואה הציעה. שום דבר לא נגע בשורש.</p>
             <p>כשהחברה שעבדתי בה קרסה — טסתי למזרח.</p>
-            <p className="text-sm italic text-[#5C5150] bg-[#F9F4EE] p-3 rounded-lg">
+            <p className="text-sm italic text-[#5C5150] bg-[#FAFAFA] p-3 rounded-lg">
               (כסקפטי מושלם. חשבתי: "מה כבר תחדש לי רפואה מלפני 2,000 שנה?")
             </p>
             <p>עברתי התמחות קלינית בבית החולים האוניברסיטאי בצ׳נגדו, סין. חזרתי עם תשובה שחיפשתי 20 שנה:</p>
@@ -272,7 +272,7 @@ export default function Page() {
           </motion.div>
 
           {/* Ofir in China photo */}
-          <motion.div variants={fadeUp} className="mb-8 rounded-xl overflow-hidden border border-[#F5EAD8]">
+          <motion.div variants={fadeUp} className="mb-8 rounded-xl overflow-hidden shadow-sm">
             <Image
               src="/ofir-china.jpg"
               alt="אופיר שגב פרימן עם המורים שלו בסין — בית החולים האוניברסיטאי בצ׳נגדו"
@@ -280,7 +280,7 @@ export default function Page() {
               height={600}
               className="w-full h-auto"
             />
-            <p className="text-xs text-center text-[#5C5150] py-2 bg-[#F9F4EE]">
+            <p className="text-xs text-center text-[#5C5150] py-2 bg-[#FAFAFA]">
               בית החולים האוניברסיטאי בצ׳נגדו, סין — התמחות קלינית
             </p>
           </motion.div>
@@ -292,7 +292,7 @@ export default function Page() {
               { n: '10,000+', l: 'לקוחות טופלו' },
               { n: 'מאות', l: 'נשים שמצאו הקלה' },
             ].map(({ n, l }) => (
-              <motion.div key={l} variants={fadeUp} className="text-center bg-[#F9F4EE] rounded-xl p-4">
+              <motion.div key={l} variants={fadeUp} className="text-center bg-[#FAFAFA] rounded-xl p-4">
                 <div className="text-2xl font-bold text-[#8B2635]">{n}</div>
                 <div className="text-xs text-[#5C5150] mt-1">{l}</div>
               </motion.div>
@@ -302,7 +302,7 @@ export default function Page() {
           {/* Media coverage */}
           <motion.div variants={stagger} className="mb-6 space-y-2">
             {/* "כפי שנראה ב" banner */}
-            <motion.div variants={fadeUp} className="rounded-xl overflow-hidden border border-[#F5EAD8] shadow-sm">
+            <motion.div variants={fadeUp} className="rounded-xl overflow-hidden shadow-md">
               <Image
                 src="/media-as-seen-in.png"
                 alt="כפי שנראה ב — Ynet, רשת 13, ערוץ 2, מנטה, לאישה"
@@ -314,7 +314,7 @@ export default function Page() {
 
             {/* YNET + TV side by side */}
             <motion.div variants={stagger} className="grid grid-cols-2 gap-2">
-              <motion.div variants={fadeUp} className="rounded-xl overflow-hidden border border-[#F5EAD8] shadow-sm">
+              <motion.div variants={fadeUp} className="rounded-xl overflow-hidden shadow-md">
                 <Image
                   src="/media-ynet.png"
                   alt="כתבה ב-Ynet"
@@ -323,7 +323,7 @@ export default function Page() {
                   className="w-full h-auto"
                 />
               </motion.div>
-              <motion.div variants={fadeUp} className="rounded-xl overflow-hidden border border-[#F5EAD8] shadow-sm">
+              <motion.div variants={fadeUp} className="rounded-xl overflow-hidden shadow-md">
                 <Image
                   src="/media-tv.png"
                   alt="אופיר בקו הבריאות — ערוץ 13"
@@ -335,7 +335,7 @@ export default function Page() {
             </motion.div>
 
             {/* Japan article - full width */}
-            <motion.div variants={fadeUp} className="rounded-xl overflow-hidden border border-[#F5EAD8] shadow-sm">
+            <motion.div variants={fadeUp} className="rounded-xl overflow-hidden shadow-md">
               <Image
                 src="/media-japan.png"
                 alt="כתבה גדול ביפן — אופיר שגב פרימן"
@@ -375,7 +375,7 @@ export default function Page() {
           <motion.p variants={fadeUp} className="text-lg text-[#C4A97D] font-semibold mb-6">בשיטת MDHM</motion.p>
 
           {/* 5 dimensions visual */}
-          <motion.div variants={fadeUp} className="mb-8 rounded-xl overflow-hidden bg-[#F9F4EE] p-2">
+          <motion.div variants={fadeUp} className="mb-8 rounded-xl overflow-hidden bg-[#FAFAFA] p-2">
             <Image
               src="/method-multidimensional.png"
               alt="שיטת MDHM — 5 שכבות הריפוי: פיזי, אנרגטי, רגשי, מנטלי, תת-מודע"
@@ -390,7 +390,7 @@ export default function Page() {
           </motion.h2>
 
           {/* Course curriculum style */}
-          <motion.div variants={fadeUp} className="rounded-2xl border border-[#E8DDD5] overflow-hidden mb-12">
+          <motion.div variants={fadeUp} className="rounded-2xl shadow-md overflow-hidden mb-12">
             {/* Header bar */}
             <div className="bg-[#8B2635] px-5 py-3 flex items-center gap-2">
               <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.8" strokeLinecap="round" className="w-5 h-5 shrink-0">
@@ -415,7 +415,7 @@ export default function Page() {
               >
                 {/* Number + play icon */}
                 <div className="shrink-0 flex flex-col items-center gap-1 pt-0.5">
-                  <div className="w-8 h-8 rounded-full bg-[#F9F4EE] border border-[#E8DDD5] flex items-center justify-center">
+                  <div className="w-8 h-8 rounded-full bg-[#FAFAFA] flex items-center justify-center">
                     <svg viewBox="0 0 24 24" fill="#8B2635" className="w-3.5 h-3.5">
                       <path d="M8 5l11 7-11 7V5z" />
                     </svg>
@@ -444,7 +444,7 @@ export default function Page() {
               { img: '/bonus-vip-whatsapp.png', alt: 'קבוצת VIP', title: 'קבוצת ה-VIP השקטה', desc: 'הודעת דיוק מאופיר פעם בשבוע', value: '397' },
               { img: '/bonus-toxins.png', alt: 'מדריך הרעלנים', title: 'חשיפת הטריגרים הסמויים', desc: 'רשימת המוקשים בבית ובמזון שמפעילים את הכאב', value: '497' },
             ].map(({ img, alt, title, desc, value }) => (
-              <motion.div key={title} variants={fadeUp} className="bg-white rounded-xl p-4 border border-[#C4A97D]">
+              <motion.div key={title} variants={fadeUp} className="bg-white rounded-2xl p-5 shadow-sm">
                 <div className="flex gap-4 items-center">
                   <div className="shrink-0 w-14 h-14 flex items-center justify-center">
                     <Image src={img} alt={alt} width={100} height={100} className="w-full h-full object-contain" />
@@ -502,7 +502,7 @@ export default function Page() {
               <motion.div
                 key={name}
                 variants={fadeUp}
-                className="bg-white rounded-2xl p-5 shadow-sm border border-[#F5EAD8]"
+                className="bg-white rounded-2xl p-5 shadow-sm shadow-sm"
               >
                 <Stars />
                 <p className="text-[#1C1C1C] mt-2 leading-relaxed">"{quote}"</p>
@@ -557,14 +557,14 @@ export default function Page() {
             ההשקעה שלך:
           </motion.h2>
 
-          <motion.div variants={fadeUp} className="bg-white rounded-2xl p-7 shadow-sm border border-[#F5EAD8] text-center mb-6">
+          <motion.div variants={fadeUp} className="bg-white rounded-2xl p-7 shadow-sm shadow-sm text-center mb-6">
             <p className="text-5xl font-bold text-[#8B2635] mb-1">129 ₪</p>
             <p className="text-sm text-[#5C5150] mb-4">או 3 תשלומים של 43 ₪ בלבד</p>
             <p className="text-base font-bold text-[#1C1C1C]">פחות מעלות טיפול אחד בקליניקה</p>
           </motion.div>
 
           {/* Guarantee */}
-          <motion.div variants={fadeUp} className="bg-white rounded-2xl p-5 border border-[#C4A97D] mb-8">
+          <motion.div variants={fadeUp} className="bg-white rounded-2xl p-6 shadow-sm mb-8">
             <p className="font-bold text-[#1C1C1C] mb-2">🛡️ אחריות 30 יום — ללא אותיות קטנות</p>
             <p className="text-base text-[#5C5150] leading-relaxed">
               תרגלת, עברת על התכנים, ולא הרגשת שינוי?
@@ -575,29 +575,29 @@ export default function Page() {
       </Section>
 
       {/* ─── FINAL CTA ─── */}
-      <Section id="cta-form" className="!bg-[#3D0A12]">
+      <Section id="cta-form">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={stagger}
         >
-          <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold mb-3 text-center text-white">
+          <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold mb-3 text-center text-[#1C1C1C]">
             הגיע הזמן להחזיר שליטה
           </motion.h2>
 
-          <motion.p variants={fadeUp} className="text-white/80 mb-8 text-center text-lg">
+          <motion.p variants={fadeUp} className="text-[#5C5150] mb-10 text-center text-lg">
             129 ₪ בלבד • גישה מיידית • אחריות 30 יום
           </motion.p>
 
-          {/* Embedded form */}
+          {/* Embedded form — white card with subtle burgundy frame */}
           <motion.div
             variants={fadeUp}
-            className="rounded-2xl overflow-hidden bg-white"
-            style={{ boxShadow: '0 4px 32px rgba(0,0,0,0.25)' }}
+            className="rounded-3xl overflow-hidden bg-white border border-[#8B2635]/20"
+            style={{ boxShadow: '0 20px 60px rgba(139, 38, 53, 0.10)' }}
           >
             {/* Steps header */}
-            <div className="bg-[#F9F4EE] px-6 pt-5 pb-4 border-b border-[#E8DDD5] text-right">
+            <div className="bg-white px-6 pt-6 pb-5 border-b border-[#F0F0F0] text-right">
               <ol className="space-y-2">
                 {[
                   'מלאי את הפרטים בטופס',
@@ -618,14 +618,14 @@ export default function Page() {
             </div>
 
             {/* Footer */}
-            <div className="bg-[#F9F4EE] px-6 py-3 border-t border-[#E8DDD5] text-center">
+            <div className="bg-white px-6 py-3 border-t border-[#F0F0F0] text-center">
               <p className="text-xs text-[#5C5150]">אחריות מלאה 30 יום ✦ גישה מיידית למייל ✦ תשלום מאובטח</p>
             </div>
           </motion.div>
 
-          <motion.p variants={fadeUp} className="mt-10 text-sm text-white/70 font-semibold text-center">
+          <motion.p variants={fadeUp} className="mt-12 text-sm text-[#5C5150] font-semibold text-center">
             באהבה,<br />
-            <span className="text-white text-base">אופיר שגב פרימן</span>
+            <span className="text-[#1C1C1C] text-base">אופיר שגב פרימן</span>
           </motion.p>
         </motion.div>
       </Section>
