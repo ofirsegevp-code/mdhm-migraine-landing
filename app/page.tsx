@@ -61,7 +61,7 @@ function Section({ children, alt = false, className = '', id = '' }: {
 function CTAButton({ text = 'אני רוצה להחזיר לעצמי שליטה — 129 ₪ בלבד' }: { text?: string }) {
   return (
     <div className="flex flex-col items-center gap-2 mt-8">
-      <a href="/signup.html" className="cta-btn">{text}</a>
+      <a href="#cta-form" className="cta-btn">{text}</a>
       <span className="text-sm text-[#5C5150]">או 3 תשלומים נוחים של 43 ₪</span>
     </div>
   )
@@ -582,19 +582,45 @@ export default function Page() {
           viewport={{ once: true, amount: 0.2 }}
           variants={stagger}
         >
-          <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold mb-4 text-center text-white">
-            הגיע הזמן להחזיר שליטה:
+          <motion.h2 variants={fadeUp} className="text-3xl md:text-4xl font-bold mb-3 text-center text-white">
+            הגיע הזמן להחזיר שליטה
           </motion.h2>
 
           <motion.p variants={fadeUp} className="text-white/80 mb-8 text-center text-lg">
             129 ₪ בלבד • גישה מיידית • אחריות 30 יום
           </motion.p>
 
-          <motion.div variants={fadeUp} className="flex flex-col items-center gap-3">
-            <a href="/signup.html" className="cta-btn text-xl py-5">
-              אני רוצה להחזיר לעצמי שליטה — 129 ₪ בלבד
-            </a>
-            <span className="text-white/60 text-sm">או 3 תשלומים נוחים של 43 ₪</span>
+          {/* Embedded form */}
+          <motion.div
+            variants={fadeUp}
+            className="rounded-2xl overflow-hidden bg-white"
+            style={{ boxShadow: '0 4px 32px rgba(0,0,0,0.25)' }}
+          >
+            {/* Steps header */}
+            <div className="bg-[#F9F4EE] px-6 pt-5 pb-4 border-b border-[#E8DDD5] text-right">
+              <ol className="space-y-2">
+                {[
+                  'מלאי את הפרטים בטופס',
+                  'השלימי רכישה בתשלום מאובטח',
+                  'הערכה מגיעה למייל תוך 15 שניות',
+                ].map((step, i) => (
+                  <li key={i} className="flex items-center gap-3">
+                    <span className="bg-[#8B2635] text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center shrink-0">{i + 1}</span>
+                    <span className="text-[#1C1C1C] text-sm">{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            {/* Form */}
+            <div className="bg-white px-4 py-5">
+              <RavpageForm />
+            </div>
+
+            {/* Footer */}
+            <div className="bg-[#F9F4EE] px-6 py-3 border-t border-[#E8DDD5] text-center">
+              <p className="text-xs text-[#5C5150]">אחריות מלאה 30 יום ✦ גישה מיידית למייל ✦ תשלום מאובטח</p>
+            </div>
           </motion.div>
 
           <motion.p variants={fadeUp} className="mt-10 text-sm text-white/70 font-semibold text-center">
