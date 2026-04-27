@@ -52,7 +52,7 @@ function Section({ children, alt = false, className = '', id = '' }: {
   id?: string
 }) {
   return (
-    <section id={id} className={`py-20 md:py-24 px-5 md:px-8 bg-white ${className}`}>
+    <section id={id} className={`py-12 md:py-16 px-5 md:px-8 bg-white ${className}`}>
       <div className="max-w-2xl mx-auto text-center">{children}</div>
     </section>
   )
